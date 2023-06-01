@@ -1,0 +1,171 @@
+.player_score {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.score,
+.active_score {
+  margin: 0vh 5vw;
+}
+
+/* Sets the containers height and width */
+.base-timer {
+  position: relative;
+}
+
+.twitchTimer{
+  opacity: 0%;
+}
+.twitchTimer,
+.base-timer,
+.base-timer__label {
+  display: block;
+  height: 300px;
+  width: 300px;
+  transition: opacity .75s ease;
+}
+
+/* Removes SVG styling that would hide the time label */
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+/* The SVG path that displays the timer's progress */
+.base-timer__path-elapsed,
+.base-timer__path-remaining {
+  stroke-width: 7px;
+}
+
+.base-timer__path-elapsed {
+  stroke: grey;
+}
+
+.base-timer__label {
+  position: absolute;
+
+  /* Size should match the parent container */
+  top: 0;
+
+  /* Create a flexible box that centers content vertically and horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Sort of an arbitrary number; adjust to your liking */
+  font-size: 48px;
+}
+.base-timer__path-remaining {
+  /* Rounds the line endings to create a seamless circle */
+  stroke-linecap: round;
+
+  /* Makes sure the animation starts at the top of the circle */
+  transform: rotate(90deg);
+  transform-origin: center;
+
+  /* One second aligns with the speed of the countdown timer */
+  transition: 1s linear all;
+
+  /* Allows the ring to change color when the color value updates */
+  stroke: currentColor;
+}
+
+.base-timer__svg {
+  /* Flips the svg and makes the animation to move left-to-right */
+  transform: scaleX(-1);
+}
+/* color timer */
+.base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.twitchTimer {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+/* div name player */
+/* .player{
+  color: yellowgreen;
+} */
+.player.turn{ /* div name player actual turn */
+  color: yellowgreen;
+  transition: all 0.5s linear;
+}
+
+/* css Emote */
+.emote_twitch{
+  position: absolute;
+  transition: all 0.5s linear;
+  opacity: 30%;
+}
+
+#popupUp{
+  z-index: 9999;
+  position: absolute;
+  bottom: 100%;
+  transform: translate(-50%, 0%);
+  transition: all 1.5s ease;
+  left: 50%;
+  padding: 10px;
+  border: 3px solid yellow;
+  border-radius: 5px;
+  background-color: rgb(219, 219, 219);
+}
+#popupUp.down{
+  transform: translate(-50%, 100%);
+}
+
+.twitchNbPlayer{
+  position:absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 5px;
+  border: 5px solid yellow;
+  padding: 10px;
+}
+
+.name_player{
+  display: flex;
+}
+.name_player.subscriber{
+  background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+	-webkit-background-size: 150px;
+  color: rgb(255 215 0 / 30%);
+	/* color: rgba(255, 255, 255, 0.3); */
+	-webkit-background-clip: text;
+	-webkit-animation-name: shine;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-iteration-count: infinite;
+	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+@-webkit-keyframes shine {
+	0%, 100% {
+		background-position: -200%;
+  }
+	50% {
+		background-position: 400%;
+	}
+}
+
+.totalInscrit{
+  color: white;
+}
+.ready{
+  color: greenyellow!important;
+  text-shadow: 0px 0px 5px black!important;
+}
+.notready{
+  color: red!important;
+  text-shadow: 0px 0px 5px black!important;
+}
